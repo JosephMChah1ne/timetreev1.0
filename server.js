@@ -14,7 +14,6 @@ app.get('/status.json', (req, res) => {
     time: new Date().toISOString()
   });
 });
-
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
 });
