@@ -4,13 +4,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  res.send('Railway server is alive');
+  res.send('Server is alive');
 });
 
 app.get('/status.json', (req, res) => {
-  res.json({ ok: true, message: 'basic server working' });
+  res.json({
+    ok: true,
+    port: PORT,
+    time: new Date().toISOString()
+  });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on port ${PORT}`);
 });
